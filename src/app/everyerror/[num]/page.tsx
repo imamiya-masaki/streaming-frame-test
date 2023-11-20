@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <main>
       <div>
+      Streaming-test
       <Suspense fallback={<p>Loading...</p>}>
         <SuspenseComponent />
       </Suspense>
