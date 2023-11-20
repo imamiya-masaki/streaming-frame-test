@@ -1,18 +1,12 @@
-import { Suspense } from "react";
 
-function SuspenseComponent () {
-  throw Error ("error")
-  return <div>error</div>
-}
+import DefaultErrorPage from 'next/error'
 
 export default function Home() {
   return (
     <main>
       <div>
       Streaming-test
-      <Suspense fallback={<p>Loading...</p>}>
-        <SuspenseComponent />
-      </Suspense>
+       <DefaultErrorPage statusCode={404} />
       </div>
     </main>
   )
