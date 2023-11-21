@@ -12,6 +12,6 @@ export async function GET(request: Request) {
     if (isError === "true") {
       return Response.error()
     } else {
-      return Response.json({"response": "ok"})
+      return Response.json({"response": "ok!hogehoge"})
     }
   }
