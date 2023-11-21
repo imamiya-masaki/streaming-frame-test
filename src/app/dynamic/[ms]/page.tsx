@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 
 async function SuspenseComponent ({ms}: {ms: string}) {
@@ -8,9 +8,8 @@ async function SuspenseComponent ({ms}: {ms: string}) {
     return <div>{obj.response}</div>
 }
 
-export default function Home() {
-  const router = useRouter()
-  const ms = router.query.ms as string;
+export default function Home({params}: {params: {ms: string}}) {
+  const ms = params.ms;
   return (
     <main>
       <div>
