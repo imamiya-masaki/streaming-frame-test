@@ -6,7 +6,8 @@ async function SuspenseComponent () {
     const obj = await fetched.json();
     return <div>{obj.response}</div>
   } else {
-    return <DefaultErrorPage statusCode={404}/>
+    throw Error("")
+    return <div>ng</div>
   }
 }
 
@@ -22,3 +23,5 @@ export default function Home() {
     </main>
   )
 }
+
+export const dynamic = 'force-dynamic'
