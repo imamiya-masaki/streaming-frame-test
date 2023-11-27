@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 async function SuspenseComponent ({ms}: {ms: string}) {
-  const fetched = await fetch(`https://streaming-frame-test.vercel.app/api/?ms=${ms}&is_error=false`)
+  const fetched = await fetch(`https://streaming-frame-test.vercel.app/api/?ms=${ms}&is_error=true`)
   if (fetched.ok) {
     const obj = await fetched.json();
     return <div>{obj.response}</div>
