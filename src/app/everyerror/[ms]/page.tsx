@@ -1,6 +1,8 @@
-import { Suspense } from "react";
+
 function SuspenseComponent () {
-  throw Error("error")
+  if ("true" === "true") { // 自明なtrue
+    throw "エラー実行"
+  }
   return <div>error</div>
 }
 
@@ -9,9 +11,9 @@ export default function Home() {
     <main>
       <div>
       Streaming-test
-      <Suspense fallback={<p>Loading...</p>}>
+      {/* <Suspense fallback={<p>Loading...</p>}> */}
         <SuspenseComponent />
-      </Suspense>
+      {/* </Suspense> */}
       </div>
     </main>
   )

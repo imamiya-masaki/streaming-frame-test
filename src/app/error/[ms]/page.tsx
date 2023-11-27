@@ -1,12 +1,14 @@
 import { Suspense } from "react";
-import DefaultErrorPage from 'next/error'
 async function SuspenseComponent ({ms}: {ms: string}) {
   const fetched = await fetch(`https://streaming-frame-test.vercel.app/api/?ms=${ms}&is_error=false`)
   if (fetched.ok) {
     const obj = await fetched.json();
     return <div>{obj.response}</div>
   } else {
-    throw Error("")
+    if ("true" === "true") { // 自明なtrue
+      console.log('error発生')
+      throw Error("エラー実行")
+    }
     return <div>ng</div>
   }
 }
