@@ -18,7 +18,7 @@ export default function Home({params}: {params: {ms: string}}) {
   return (
     <main>
       <div>
-      Streaming-test
+      error-test
       <Suspense fallback={<p>Loading...</p>}>
         <SuspenseComponent ms={ms}/>
       </Suspense>
